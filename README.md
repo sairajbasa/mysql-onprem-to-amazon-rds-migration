@@ -15,15 +15,26 @@ The lab includes:
 
 ### 🏗 Architecture
 
-```mermaid
-
-On-Prem MySQL (EC2 Linux)
-        ↓
-Logical Backup (mysqldump)
-        ↓
-Amazon RDS (MySQL Engine)
-        ↓
-Validation via MySQL Workbench
+```text
++-----------------------------+
+|  On-Prem MySQL (EC2 Linux)  |
++-------------+---------------+
+              |
+              v
++-----------------------------+
+|  Logical Backup (mysqldump) |
++-------------+---------------+
+              |
+              v
++-----------------------------+
+|  Amazon RDS (MySQL Engine)  |
+|         Restoring           |
++-------------+---------------+
+              |
+              v
++-----------------------------+
+|  Validation (MySQL Workbench) |
++-----------------------------+
 ```
 
 ### 🛠 Technologies Used
